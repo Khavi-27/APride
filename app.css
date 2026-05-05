@@ -1,0 +1,288 @@
+/* Global modern theme for APRide */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at top left, #22c55e33 0, transparent 50%),
+    radial-gradient(circle at bottom right, #0ea5e933 0, transparent 55%),
+    #020617;
+  min-height: 100vh;
+}
+
+/* Generic container */
+.shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+/* Top nav used across dashboards */
+.ap-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(to right, #020617dd, #020617cc);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+.ap-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.ap-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ap-logo {
+  height: 40px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.6);
+}
+
+.ap-brand {
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #e5e7eb;
+}
+
+.ap-nav-links a {
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background 0.15s, color 0.15s, transform 0.1s;
+}
+
+.ap-nav-links a:hover {
+  background: rgba(15, 23, 42, 0.9);
+  color: #f9fafb;
+  transform: translateY(-1px);
+}
+
+.ap-nav-links a.ap-nav-primary {
+  background: linear-gradient(135deg, #22c55e, #22c55e, #0ea5e9);
+  color: #0f172a;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.45);
+}
+
+/* Glass cards */
+.glass-card {
+  background: radial-gradient(circle at top left, rgba(148, 163, 184, 0.08), rgba(15, 23, 42, 0.96));
+  border-radius: 24px;
+  padding: 32px 26px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow:
+    0 22px 45px rgba(15, 23, 42, 0.75),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+}
+
+.glass-card h1,
+.glass-card h2,
+.glass-card h3 {
+  margin-top: 0;
+  color: #f9fafb;
+}
+
+/* Auth layout */
+.auth-shell {
+  max-width: 420px;
+  margin: 48px auto;
+}
+
+.auth-title {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.auth-sub {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 22px;
+}
+
+.ap-input,
+.ap-select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: rgba(15, 23, 42, 0.85);
+  color: #e5e7eb;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.ap-input:focus,
+.ap-select:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.8);
+}
+
+.ap-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5f5;
+  margin-bottom: 6px;
+}
+
+.ap-button-primary {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #22c55e, #0ea5e9);
+  color: #020617;
+  cursor: pointer;
+  box-shadow: 0 18px 45px rgba(34, 197, 94, 0.6);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s;
+}
+
+.ap-button-primary:hover {
+  transform: translateY(-1px);
+  filter: saturate(1.1);
+  box-shadow: 0 22px 55px rgba(34, 197, 94, 0.75);
+}
+
+.ap-link {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.ap-link:hover {
+  text-decoration: underline;
+}
+
+/* Dashboard grid */
+.ap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.ap-tile {
+  border-radius: 20px;
+  padding: 22px 20px;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.25), rgba(15, 23, 42, 0.96));
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e5e7eb;
+  cursor: pointer;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
+  transition: transform 0.13s ease, box-shadow 0.13s ease, border-color 0.13s;
+}
+
+.ap-tile:hover {
+  transform: translateY(-3px) translateZ(0);
+  border-color: rgba(34, 197, 94, 0.9);
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.95);
+}
+
+.ap-tile-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.ap-tile-sub {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* Tables */
+table.ap-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 18px;
+  overflow: hidden;
+  color: #e5e7eb;
+}
+
+table.ap-table thead {
+  background: rgba(15, 23, 42, 0.96);
+}
+
+table.ap-table th,
+table.ap-table td {
+  padding: 11px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.85);
+}
+
+table.ap-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+table.ap-table tr:hover td {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+/* Status pills */
+.ap-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.ap-pill-green {
+  background: rgba(22, 163, 74, 0.18);
+  color: #4ade80;
+}
+
+.ap-pill-amber {
+  background: rgba(217, 119, 6, 0.18);
+  color: #fed7aa;
+}
+
+.ap-pill-red {
+  background: rgba(220, 38, 38, 0.18);
+  color: #fecaca;
+}
+
+/* Utility */
+.ap-muted {
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+@media (max-width: 640px) {
+  .shell {
+    padding: 20px 16px 36px;
+  }
+  .glass-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+}
+
